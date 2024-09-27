@@ -121,7 +121,7 @@ export function LightMode({ setPageMode }){
               <h1 className='ml-[6rem] mb-[50px] font-semibold text-[25px] text-[#789EF0]'>Meus Projetos</h1>
 
               <ul className='flex gap-8 ml-[10rem]'>
-                  <li><Projects pageMode={true} title='Portfolio' link='https://github.com/EmafPlayer' ></Projects></li>
+                  <li><Projects pageMode={true} title='Portfolio' link='https://github.com/EmafPlayer/Portfolio' ></Projects></li>
                   <li><Projects pageMode={true} title='Academic Hub' link='https://github.com/EmafPlayer/academic_hub' ></Projects></li>
                   <li><Projects pageMode={true} title='Sistema de Gerenciamento de Ações de Extensão' link='https://github.com/EmafPlayer/Projeto-POO' ></Projects></li>
               </ul>
