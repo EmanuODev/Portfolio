@@ -9,12 +9,13 @@ import { Skills } from './assets/componentes/skills';
 import { Projects } from './assets/componentes/projects';
 import { Hobbies } from './assets/componentes/hobbies';
 import ProgrammerImg from "./assets/imagens/Programmer-pana (3).svg";
+import About_me from "./assets/imagens/About_me1.svg"
 import { SiPhp } from 'react-icons/si';
 
 export function DarkMode({ setPageMode }){
 
   return (
-        <div className="h-full bg-[#242626f4]">
+        <div className="h-full bg-[#568692]">
           <nav id="inicio" className="h-32 w-full flex justify-between px-12 items-center">
             <div>
               <ul className="flex gap-2">
@@ -42,15 +43,15 @@ export function DarkMode({ setPageMode }){
                 </ul>
               </div>
               <div>
-              <button onClick={() => setPageMode(true)} className='p-3 hover:bg-[#52be81] rounded-full text-[30px] text-[#55c385cc] hover:text-[#ffffff]'><MdOutlineLightMode/></button>
+              <button onClick={() => setPageMode(true)} className='p-3 hover:bg-[#e5d8b5] rounded-full text-[30px] text-[#e5d8b5cc] hover:text-[#ffffff]'><MdOutlineLightMode/></button>
               </div>
             </div>
           </nav>
           <main>
             <div className='flex w-full justify-center gap-14 items-center pb-[8rem]'>
               <div className='ml-[85px]'>
-                <h1 className='font-mono text-[#55c385] text-[35px] mb-4'>Escrever código é fácil...<br></br>Difícil é fazê-lo rodar.</h1>
-                <div className='font-thin text-[#6cdf9eee] text-[15px] mb-[50px]'>
+                <h1 className='font-mono text-[#e5d8b5] text-[35px] mb-4'>Escrever código é fácil...<br></br>Difícil é fazê-lo rodar.</h1>
+                <div className='font-thin text-[#e5d8b5] text-[15px] mb-[50px]'>
                 <TypeAnimation sequence={[ 'Desenvolvedor Web, Full-Stack', 2000, 'Desenvolvedor Web, Back-end', 2000, 'Desenvolvedor Web, Front-end', 2000 ]} wrapper="span" speed={20} repeat={Infinity}/>
                 </div>
                 <div>
@@ -83,9 +84,9 @@ export function DarkMode({ setPageMode }){
               </div>
             </div>
 
-            <div id="habilidades" className='flex justify-center gap-[90px] pb-28 ml-16 pr-[100px] items-center'>
+            <div id="habilidades" className='flex justify-center gap-[90px] pb-28 ml-16 items-center'>
 
-              <ul>
+              <ul className='mr-10'>
 
               <li>
                   <Skills className='text-[#58C4DC]' pageMode={false} title='Front-end Development' status='Freelancing' text= 'Sou um desenvolvedor front-end, usando o framework react para aplicações web'> <FaReact/></Skills>
@@ -102,24 +103,14 @@ export function DarkMode({ setPageMode }){
               </ul>
               
               <div>
-                
-                <h1 className='text-[#55c385] text-[35px] mb-[10px] font-mono'>Oi, me chamo Emanuel Oliveira ツ</h1>
-                
-                <h2 className='text-[#55c385] text-[15px] pl-[2px] mb-7 font-mono'>Eu gosto muito de programação e sou apaixonado por matemática.</h2>
-                
-                <ul className='text-[#55c385] list-disc pl-9'>
-                  <li className='text-[12px] mb-3 font-mono'>Atualmente, faço Ciência da Computação na UNIVASF (Universidade Federal do Vale do São Francisco).</li>
-                  <li className='text-[12px] mb-3 font-mono'>Meu hobbie favorito é jogar vôlei. Amo muito jogar vôlei.</li>
-                  <li className='text-[12px] mb-14 font-mono'>Estou sempre disposto a aprender novas tecnologias e linguagens de programação.</li>
-                </ul>
-
+                <img src={About_me} alt="Sobre mim" className='h-[30rem] w-[50rem]'/>
               </div>
 
             </div>
             
             <div id='projetos' className='mb-24'>
 
-              <h1 className='ml-[6rem] mb-[50px] font-semibold text-[22px] text-[#55c385]'>Meus Projetos</h1>
+              <h1 className='ml-[6rem] mb-[50px] font-semibold text-[22px] text-[#e5d8b5]'>Meus Projetos</h1>
 
               <ul className='flex gap-8 ml-[10rem]'>
                   <li><Projects pageMode={false} title='Exemplo 1' link='https://github.com/EmafPlayer/EmafPlayer' ></Projects></li>
@@ -131,7 +122,7 @@ export function DarkMode({ setPageMode }){
 
             <div id='sobre_mim' className='pb-28'>
 
-              <h1 className='ml-[6rem] mb-[50px] font-semibold text-[22px] text-[#55c385] font'>Interesses</h1>
+              <h1 className='ml-[6rem] mb-[50px] font-semibold text-[22px] text-[#e5d8b5] font'>Interesses</h1>
 
               <ul className='flex gap-8 ml-[8rem] justify-center mb-6'>
                 <Hobbies pageMode={false} >Escutar Música</Hobbies>
