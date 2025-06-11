@@ -71,24 +71,24 @@ export function LightMode(  ){
 
   const habilidades: habilidadesType = {
     frontend: [
-      { nome: "Html", foto: "fotos_skills_frontend/HTML.svg" },
-      { nome: "CSS", foto: "fotos_skills_frontend/CSS.svg" },
-      { nome: "Tailwind", foto: "fotos_skills_frontend/TailwindCSS.svg" },
-      { nome: "JavaScript", foto: "fotos_skills_frontend/JavaScript.svg" },
-      { nome: "TypeScript", foto: "fotos_skills_frontend/TypeScript.svg" },
-      { nome: "React", foto: "fotos_skills_frontend/React.svg" }
+      { nome: "Html", foto: "assets/fotos_skills_frontend/HTML.svg" },
+      { nome: "CSS", foto: "assets/fotos_skills_frontend/CSS.svg" },
+      { nome: "Tailwind", foto: "assets/fotos_skills_frontend/TailwindCSS.svg" },
+      { nome: "JavaScript", foto: "assets/fotos_skills_frontend/JavaScript.svg" },
+      { nome: "TypeScript", foto: "assets/fotos_skills_frontend/TypeScript.svg" },
+      { nome: "React", foto: "assets/fotos_skills_frontend/React.svg" }
     ],
     backend: [
-      { nome: "c", foto: "fotos_skills_backend/C.svg" },
-      { nome: "PHP", foto: "fotos_skills_backend/PHP.svg" },
-      { nome: "Laravel", foto: "fotos_skills_backend/Laravel.svg" },
-      { nome: "Java", foto: "fotos_skills_backend/Java.svg" },
-      { nome: "Spring", foto: "fotos_skills_backend/Spring.svg" },
-      { nome: "Python", foto: "fotos_skills_backend/Python.svg"}
+      { nome: "c", foto: "assets/fotos_skills_backend/C.svg" },
+      { nome: "PHP", foto: "assets/fotos_skills_backend/PHP.svg" },
+      { nome: "Laravel", foto: "assets/fotos_skills_backend/Laravel.svg" },
+      { nome: "Java", foto: "assets/fotos_skills_backend/Java.svg" },
+      { nome: "Spring", foto: "assets/fotos_skills_backend/Spring.svg" },
+      { nome: "Python", foto: "assets/fotos_skills_backend/Python.svg"}
     ],
     outros: [
-      { nome: "MySQL", foto: "fotos_skills_outros/MySQL.svg" },
-      { nome: "Docker", foto: "fotos_skills_outros/Docker.svg" }
+      { nome: "MySQL", foto: "assets/fotos_skills_outros/MySQL.svg" },
+      { nome: "Docker", foto: "assets/fotos_skills_outros/Docker.svg" }
     ]
   };
   
@@ -96,42 +96,42 @@ export function LightMode(  ){
     { 
       title: 'Gerenciador de Imóveis', 
       descricao: 'Um WebApp para gerenciamento de imóveis, permitindo que proprietários cadastrem e publiquem informações sobre seus imóveis de forma prática e eficiente.',  
-      foto: 'fotos_projetos/foto_imovel.png',
+      foto: 'assets/fotos_projetos/foto_imovel.png',
       link: 'https://github.com/EmafPlayer/Gerenciador-Imoveis',
       tecnologias: [habilidades.frontend[0], habilidades.frontend[1], habilidades.frontend[2], habilidades.frontend[4], habilidades.frontend[5], habilidades.backend[1], habilidades.backend[2], habilidades.outros[0], habilidades.outros[1]]
     },
     { 
       title: 'EO Esporte', 
       descricao: 'Aplicação web sobre o Campeonato Brasileiro Série A, com atualizações em tempo real de jogos, tabela e informações dos clubes. Backend em Laravel e frontend em React.',  
-      foto: 'fotos_projetos/foto_esportes.png',
+      foto: 'assets/fotos_projetos/foto_esportes.png',
       link: 'https://github.com/EmafPlayer/EO_Esporte',
       tecnologias: [habilidades.frontend[0], habilidades.frontend[1], habilidades.frontend[2], habilidades.frontend[4], habilidades.frontend[5], habilidades.backend[1], habilidades.backend[2], habilidades.outros[0]]
     },
     { 
       title: 'Meu Portfolio', 
       descricao: 'Site pessoal desenvolvido em React, para exibir minhas habilidades, hobbies e informações pessoais.', 
-      foto: 'fotos_projetos/foto_portfolio.png',
+      foto: 'assets/fotos_projetos/foto_portfolio.png',
       link: 'https://github.com/EmafPlayer/Portfolio',
       tecnologias: [habilidades.frontend[0], habilidades.frontend[1], habilidades.frontend[2], habilidades.frontend[4], habilidades.frontend[5]]
     },
     { 
       title: 'Academic HUB', 
       descricao: 'Webapp de gerenciamento educacional desenvolvido por um grupo de alunos da minha faculdade, incluindo eu. Contribuí ativamente em todas as áreas do projeto, tanto no backend quanto no frontend. A aplicação possui funcionalidades como matrícula de alunos e cadastro de cursos, utilizando Laravel no backend e React no frontend.',  
-      foto: 'fotos_projetos/foto_academic.png',
+      foto: 'assets/fotos_projetos/foto_academic.png',
       link: 'https://github.com/EmafPlayer/academic_hub',
       tecnologias: [habilidades.frontend[0], habilidades.frontend[1], habilidades.frontend[2], habilidades.frontend[4], habilidades.frontend[5], habilidades.backend[1], habilidades.backend[2], habilidades.outros[0]]
     },
     {
       title: '8 Puzzle', 
       descricao: 'Este projeto implementa a resolução do quebra-cabeça de 8 peças (8-Puzzle) utilizando o algoritmo de Busca Gulosa com a heurística da distância de Manhattan. O objetivo é encontrar o menor caminho do estado inicial até o estado objetivo.',  
-      foto: 'fotos_projetos/foto_puzzle.png',
+      foto: 'assets/fotos_projetos/foto_puzzle.png',
       link: 'https://github.com/EmafPlayer/8-Puzzle',
       tecnologias: [habilidades.frontend[0], habilidades.frontend[1], habilidades.frontend[2], habilidades.frontend[4], habilidades.frontend[5], habilidades.backend[5]]
     },
     {
       title: 'Sistema de Gerenciamento de Ações de Extensão', 
       descricao: 'Este projeto é parte da disciplina de Programação Orientada a Objetos (POO) da Universidade Federal do Vale do São Francisco (Univasf). O objetivo é implementar um módulo central de um Sistema de Gerenciamento de Ações de Extensão, destinado ao envio e à avaliação de projetos de Extensão da Univasf. O foco principal é o desenvolvimento do núcleo do sistema, contemplando sua arquitetura e modelagem básica. Aplicação foi feita utilizando Java.',  
-      foto: 'fotos_projetos/foto_poo.png',
+      foto: 'assets/fotos_projetos/foto_poo.png',
       link: 'https://github.com/EmafPlayer/Projeto-POO',
       tecnologias: [habilidades.backend[3]]
     }
