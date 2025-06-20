@@ -218,7 +218,7 @@ export function LightMode(  ){
           </div>
         </nav>
 
-        <div className='flex flex-col lg:flex-row w-full justify-evenly items-center 2xl:pb-36 h-full'>
+        <div className='flex flex-col lg:flex-row w-full justify-evenly items-center pb-14 2xl:pb-36 h-full'>
 
           <motion.div initial={{ opacity: 0, x: -350 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className='flex flex-col items-center lg:items-start pb-4 sm:pb-0'>
             <h1 className={twMerge('font-outfit text-[2.5rem] lg:text-[3.5em] mb-4 text-center', page_mode ? "text-[#568692] " :  "text-[#FFFFFF]")}>Olá! Eu me chamo <br></br> Emanuel Oliveira.</h1>
