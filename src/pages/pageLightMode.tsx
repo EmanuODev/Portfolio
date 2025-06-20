@@ -13,16 +13,20 @@ import { Skills } from '../components/skills';
 import { Projects } from '../components/projects';
 import curriculo from '../../public/curriculo.pdf'
 import { Tittle } from '../components/tittle'
-import { motion } from "framer-motion";
+import { AnimatePresence, inView, motion } from "framer-motion";
 import { Habilidades } from '../components/habilidades';
 import { FaDatabase } from "react-icons/fa6";
-import { PiComputerTowerFill } from 'react-icons/pi';
-import { RiComputerFill } from 'react-icons/ri';
+import { PiAddressBookLight, PiComputerTowerFill } from 'react-icons/pi';
+import { RiComputerFill, RiHome5Line } from 'react-icons/ri';
 import { TituloEstilizado } from '../components/titulo_estilizado';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import { twMerge } from 'tailwind-merge';
 import { useMediaQuery } from 'react-responsive';
 import { TfiMenuAlt } from "react-icons/tfi";
+import { Menu } from '../components/menu';
+import { ButtonMenu } from '../components/button_menu';
+import { GrCubes } from 'react-icons/gr';
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
 
 
 type habilidadesType = {
@@ -62,6 +66,7 @@ type projetosType = {
 export function LightMode(  ){
 
   const [page_mode, setPageMode] = useState(true);
+  const [nav_status, setNavStatus] = useState(false);
 
   const [count, setCount] = useState(0);
   const [direcao, setDirecao] = useState(1);
@@ -152,9 +157,19 @@ export function LightMode(  ){
   }
   
   return (
-    <div className={twMerge("h-full overflow-hidden", page_mode ? "bg-[#A69279] bg-opacity-[0.4] " : "bg-[#2A3C45]")}>
-      <section id="inicio" className='w-full min-h-screen flex flex-col snap-center'>
-        <nav className="h-28 2xl:h-32 w-full flex justify-between py-4 lg:py-0 px-6 lg:px-12 items-center">
+    <div className={twMerge("h-full w-full overflow-hidden", page_mode ? "bg-[#A69279] bg-opacity-[0.4] " : "bg-[#2A3C45]")}>
+      <AnimatePresence>
+        { (!lg && nav_status) &&
+          <Menu pageMode={page_mode} setModal={setNavStatus} options={ [ 
+            {url: "#inicio", title: "Início", icon: <RiHome5Line />}, 
+            {url: "#projetos", title: "Projetos", icon: <AiOutlineFundProjectionScreen />}, 
+            {url: "#sobre_mim", title: "Sobre mim", icon: <PiAddressBookLight />}, 
+            {url: "#habilidades", title: "Habilidades", icon: <GrCubes />}, 
+          ]}/>
+        }
+      </AnimatePresence>
+      <section id="inicio" className='w-full h-screen flex flex-col snap-center'>
+        <nav className="h-20 2xl:h-32 w-full flex justify-between py-12 lg:py-0 px-6 lg:px-12 items-center relative">
           { lg ?
 
             <ul className="flex gap-2">
@@ -165,10 +180,12 @@ export function LightMode(  ){
             </ul>
 
           :
-            
-            <button className='py-3 px-3 rounded-lg bg-[#568692] text-white'>
-              <TfiMenuAlt />
-            </button>
+
+            <div>
+              { !nav_status &&
+                <ButtonMenu pageMode={page_mode} setModal={setNavStatus} status={true}><TfiMenuAlt /></ButtonMenu>
+              }
+            </div>
 
           }
           <div className='flex items-center gap-4 lg:gap-10'>
@@ -194,9 +211,9 @@ export function LightMode(  ){
           </div>
         </nav>
 
-        <div className='flex flex-col lg:flex-row w-full justify-center lg:gap-6 2xl:gap-20 items-center 2xl:pt-8 h-full'>
+        <div className='flex flex-col lg:flex-row w-full justify-evenly items-center 2xl:pb-36 h-full'>
 
-          <motion.div initial={{ opacity: 0, x: -350 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className='flex flex-col items-center lg:items-start my-8 sm:py-0'>
+          <motion.div initial={{ opacity: 0, x: -350 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className='flex flex-col items-center lg:items-start pb-4 sm:pb-0'>
             <h1 className={twMerge('font-outfit text-[2.5rem] lg:text-[3.5em] mb-4 text-center', page_mode ? "text-[#568692] " :  "text-[#FFFFFF]")}>Olá! Eu me chamo <br></br> Emanuel Oliveira.</h1>
             <div className={twMerge('font-thin text-[1em] mb-[4em]', page_mode ? "text-[#568692] " :  "text-[#FFFFFF]")}>
               <TypeAnimation sequence={[ 'Desenvolvedor Web, Full-Stack', 2000, 'Desenvolvedor Web, Back-end', 2000, 'Desenvolvedor Web, Front-end', 2000 ]} wrapper="span" speed={20} repeat={Infinity}/>
@@ -231,7 +248,7 @@ export function LightMode(  ){
 
           {sm && 
             <motion.div initial={{ opacity: 0, x: 350 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-              <img src={page_mode? ProgrammerImgLight : ProgrammerImgDark} alt="Eu sou um Programador" className='h-[27rem] sm:h-[35rem] w-full sm:w-[40rem] '/>
+              <img src={page_mode? ProgrammerImgLight : ProgrammerImgDark} alt="Eu sou um Programador" className='h-[30rem] 2xl:h-[40rem] w-[30rem] 2xl:w-[40rem] mb-12 2xl:pb-0'/>
             </motion.div>
           }
 
@@ -243,11 +260,11 @@ export function LightMode(  ){
 
       <section id='projetos' className='min-h-screen w-full snap-center'>
 
-        <Tittle page_mode={page_mode} className='pt-8 w-full'>Meus Projetos</Tittle>
+        <Tittle page_mode={page_mode} className='pt-4 2xl:pt-8 w-full 2xl:mb-14'>Meus Projetos</Tittle>
 
         {lg ? 
         
-          <motion.div className='h-full w-full sm:px-10 flex flex-1 items-center justify-between sm:mt-8' initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{duration: 0.7}}>
+          <motion.div className='h-full w-full px-4 2xl:px-10 flex flex-1 items-center justify-between 2xl:mt-8' initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{duration: 0.7}}>
 
             {count > 0 && <button onClick={antPagina}><IoIosArrowDropleftCircle className={twMerge("text-[2.8rem]", page_mode ? "text-[#488392]" : "text-[#B0BEC5]")}/></button>}
 
@@ -261,18 +278,18 @@ export function LightMode(  ){
         
         :
         
-          <motion.div className='h-full w-full sm:px-10 flex flex-col flex-1 items-center justify-between sm:mt-8' initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} transition={{duration: 0.3}}>
+          <motion.div className='h-full w-full flex flex-col flex-1 items-center justify-between' initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} transition={{duration: 0.3}}>
 
-            <motion.div key={count} initial={{ opacity: 0, x: direcao === 1 ? 30 : -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4}}>
-              <Projects page_mode={page_mode} projeto={projetos[count]} ></Projects>
-            </motion.div>
-            
-            <div className='flex items-center w-full justify-evenly mt-[6rem] mb-[8rem]'>
+            <div className='flex items-center w-full justify-evenly mt-8'>
 
               {count > 0 && <button onClick={antPagina}><IoIosArrowDropleftCircle className={twMerge("text-[2.8rem]", page_mode ? "text-[#488392]" : "text-[#B0BEC5]")}/></button>}
               {count < projetos.length - 1 && <button onClick={proxPagina}><IoIosArrowDroprightCircle className={twMerge("text-[2.8rem]", page_mode ? "text-[#488392]" : "text-[#B0BEC5]")}/></button>}
 
             </div>
+
+            <motion.div key={count} initial={{ opacity: 0, x: direcao === 1 ? 30 : -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4}}>
+              <Projects page_mode={page_mode} projeto={projetos[count]} ></Projects>
+            </motion.div>
           
           </motion.div>  
 
@@ -285,7 +302,7 @@ export function LightMode(  ){
 
       <section id="sobre_mim" className='w-full h-screen flex flex-col snap-center	'>
 
-        <Tittle page_mode={page_mode} className='pt-8 2xl:pt-12'>Sobre Mim</Tittle>
+        <Tittle page_mode={page_mode} className='pt-4 2xl:pt-12'>Sobre Mim</Tittle>
 
         <div className='flex justify-center 2xl:gap-12 items-center h-full w-full px-4 2xl:px-0'>
 
@@ -305,36 +322,40 @@ export function LightMode(  ){
 
           </motion.ul>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1}}>
-            <img src={page_mode ? About_meLight : About_meDark} alt="Sobre mim" className='h-[26rem] 2xl:h-[30rem] w-[38rem] 2xl:w-[50rem] translate-x-10'/>
-          </motion.div>
+          { lg &&
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1}}>
+              <img src={page_mode ? About_meLight : About_meDark} alt="Sobre mim" className='h-[26rem] 2xl:h-[30rem] w-[38rem] 2xl:w-[50rem] translate-x-10'/>
+            </motion.div>
+          }
 
         </div>
 
 
       </section>
 
-      <section id='habilidades' className='h-screen w-full snap-center	'>
+      {/* ------- Habiliades ------- */}
 
-        <Tittle page_mode={page_mode} className='pt-8 2xl:pt-12'>Habilidades</Tittle>
+      <section id='habilidades' className='min-h-screen w-full snap-center	'>
 
-        <div className='mt-20 px-20 gap-y-14 flex flex-col w-full'>
+        <Tittle page_mode={page_mode} className='pt-4 2xl:pt-12 mb-12 lg:mb-0'>Habilidades</Tittle>
 
-          <div className='flex items-center justify-between w-full'> 
+        <div className='mt-8 2xl:mt-20 mb-12 lg:mb-0 lg:px-20 gap-y-14 flex flex-col w-full'>
+
+          <div className='flex flex-col-reverse lg:flex-row items-center justify-between w-full mb-12 lg:mb-0'> 
             <div>
               <Habilidades page_mode={page_mode} habilidades={habilidades["frontend"]}></Habilidades>
             </div>
             <TituloEstilizado page_mode={page_mode}>Frontend</TituloEstilizado>
           </div>
 
-          <div className='flex items-center justify-between w-full'>
+          <div className='flex flex-col-reverse lg:flex-row items-center justify-between w-full mb-12 lg:mb-0'>
             <div>
               <Habilidades page_mode={page_mode} habilidades={habilidades["backend"]}></Habilidades>
             </div>
             <TituloEstilizado page_mode={page_mode}>Backend</TituloEstilizado>
           </div>
 
-          <div className='flex items-center justify-between w-full'>
+          <div className='flex flex-col-reverse lg:flex-row items-center justify-between w-full'>
             <div>
               <Habilidades page_mode={page_mode} habilidades={habilidades['outros']}></Habilidades>
             </div>

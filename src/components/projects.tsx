@@ -32,15 +32,15 @@ export function Projects( props: ProjectsProps ){
 
     <div className={twMerge("flex flex-col sm:flex-row items-center justify-around rounded-lg")}>
 
-      <div className="flex flex-col gap-20 w-full sm:w-[60%] pr-3 sm:pr-0 pl-3 sm:pl-6 mt-20 sm:mt-12 mb-[10rem] sm:mb-0">
+      <div className="flex flex-col gap-16 2xl:gap-20 w-full sm:w-[60%] pr-3 sm:pr-0 pl-3 sm:pl-6 mt-12 mb-[10rem] sm:mb-0">
 
         { lg ? 
         
-          <motion.img src={props.projeto.foto} alt={props.title} initial={{rotateX: 10, rotateY: 25, translateY: 0 }} whileHover={{ rotateX: 5, rotateY: -30, scale: 1.15, translateY: -10, }} transition={{ duration: 0.5}} className={`w-full sm:w-[45rem] 2xl:w-[57rem] h-[20rem] sm:h-[25rem] 2xl:h-[30rem] rounded-3xl shadow-2xl hover:shadow-lg border-[1px] ${ props.page_mode ? "border-[#488392]" : "border-[#e5d8b5]" }`} />
+          <motion.img src={props.projeto.foto} alt={props.title} initial={{rotateX: 10, rotateY: 25, translateY: 0 }} whileHover={{ rotateX: 5, rotateY: -30, scale: 1.15, translateY: -10, }} transition={{ duration: 0.5}} className={`w-[41rem] 2xl:w-[57rem] h-[22rem] 2xl:h-[30rem] mb-10 rounded-3xl shadow-2xl hover:shadow-lg border-[1px] ${ props.page_mode ? "border-[#488392]" : "border-[#e5d8b5]" }`} />
         
         :
         
-          <img src={props.projeto.foto} className={`w-full sm:w-[45rem] 2xl:w-[57rem] h-[17rem] sm:h-[25rem] 2xl:h-[30rem] rounded-3xl shadow-2xl hover:shadow-lg border-[1px] ${ props.page_mode ? "border-[#488392]" : "border-[#e5d8b5]" }`} />
+          <img src={props.projeto.foto} className={`w-full sm:w-[45rem] h-[17rem] sm:h-[2rem] rounded-3xl shadow-2xl hover:shadow-lg border-[1px] ${ props.page_mode ? "border-[#488392]" : "border-[#e5d8b5]" }`} />
         
         }
 
@@ -56,7 +56,7 @@ export function Projects( props: ProjectsProps ){
       </div>
     
       
-      <div className="flex flex-col gap-20 items-center w-full sm:w-[40%] sm:pr-24">
+      <div className="flex flex-col gap-36 sm:gap-20 items-center w-full sm:w-[40%] sm:pr-24 h-screen sm:h-full">
 
         <TituloEstilizado page_mode={props.page_mode}>{props.projeto.title}</TituloEstilizado>
 
