@@ -13,7 +13,7 @@ import { Skills } from '../components/skills';
 import { Projects } from '../components/projects';
 import curriculo from '../../public/curriculo.pdf'
 import { Tittle } from '../components/tittle'
-import { AnimatePresence, inView, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Habilidades } from '../components/habilidades';
 import { FaDatabase } from "react-icons/fa6";
 import { PiAddressBookLight, PiComputerTowerFill } from 'react-icons/pi';
@@ -98,6 +98,13 @@ export function LightMode(  ){
   };
   
   const projetos: projetosType[] = [
+    {
+      title: 'Pitija Lanches', 
+      descricao: 'Este projeto é um e-commerce que eu fiz para a lanchonete do meu tio, onde a pessoa faz o pedido pela internet e retira na lanchonete.',  
+      foto: '/Portfolio/fotos_projetos/foto_pitija.png',
+      link: 'https://github.com/EmanuODev/Pitija-Lanches',
+      tecnologias: [habilidades.frontend[0], habilidades.frontend[1], habilidades.frontend[2], habilidades.frontend[4], habilidades.frontend[5], habilidades.backend[3], habilidades.backend[4],  habilidades.outros[0]]
+    },
     { 
       title: 'Gerenciador de Imóveis', 
       descricao: 'Um WebApp para gerenciamento de imóveis, permitindo que proprietários cadastrem e publiquem informações sobre seus imóveis de forma prática e eficiente.',  
@@ -135,7 +142,7 @@ export function LightMode(  ){
     },
     {
       title: 'Sistema de Gerenciamento de Ações de Extensão', 
-      descricao: 'Este projeto é parte da disciplina de Programação Orientada a Objetos (POO) da Universidade Federal do Vale do São Francisco (Univasf). O objetivo é implementar um módulo central de um Sistema de Gerenciamento de Ações de Extensão, destinado ao envio e à avaliação de projetos de Extensão da Univasf. O foco principal é o desenvolvimento do núcleo do sistema, contemplando sua arquitetura e modelagem básica. Aplicação foi feita utilizando Java.',  
+      descricao: 'Este projeto é parte da disciplina de Programação Orientada a Objetos (POO) da Universidade Federal do Vale do São Francisco (Univasf). O objetivo é implementar um módulo central de um Sistema de Gerenciamento de Ações de Extensão, destinado ao envio e à avaliação de projetos de Extensão da Univasf. O foco principal é o desenvolvimento do núcleo do sistema, contemplando sua arquitetura e modelagem básica.',  
       foto: '/Portfolio/fotos_projetos/foto_poo.png',
       link: 'https://github.com/EmafPlayer/Projeto-POO',
       tecnologias: [habilidades.backend[3]]
